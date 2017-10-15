@@ -1,6 +1,4 @@
-# HPD - Ansible - Wordpress
-
-Meu primeiro tosco projeto utilizando Ansible.
+# HPD - Ansible - Wordpress - v2
 
 Consiste em um Playbook para criação de um ambiente Wordpress, utilizando Apache + PHP + MySQL.
 
@@ -9,8 +7,8 @@ Consiste em um Playbook para criação de um ambiente Wordpress, utilizando Apac
 Realize os ajustes necessários em:
 
 *hosts*: arquivo de inventário, onde devem constar os IPs das suas máquinas envolvidas
-*roles/db/defaults/main.yml*: variáveis utilizadas na criação do ambiente de DB
-*roles/web/defaults/main.yml*: variáveis utilizadas na criação do ambiente Web
+
+*group_vars/all*: variáveis utilizadas para criação do ambiente
 
 ```
 ansible-playbook -i hosts playbook.yml
