@@ -1,0 +1,21 @@
+---
+- name: "Instalando os pacotes necessarios"
+  apt: pkg={{ item }} state=installed
+  with_items:
+  - mysql-server
+  - php-mysql
+  - python-mysqldb
+
+- name: "Criando MySQL DB"
+  mysql_db: name={{ wp_mysql_db }} state=present
+
+- name: "Criando MySQL User"
+  mysql_user:
+    name={{ wp_mysql_user }} 
+    host=%
+    password={{ wp_mysql_password }} 
+    priv=*.*:ALL
+
+- name: "Copiando arquivo de configuracao do MySQL"
+  template: src=mysqld.cnf.j2 dest=/etc/mysql/mysql.conf.d/mysqld.cnf
+  notify: restart mysql

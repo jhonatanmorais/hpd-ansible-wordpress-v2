@@ -1,0 +1,7 @@
+---
+- name: Instalando Apache
+  apt: pkg={{ item }} state=installed
+  with_items:
+  - apache2
+  - libapache2-mod-php
+  notify: restart apache2

@@ -1,0 +1,14 @@
+---
+- hosts: web
+  become: true
+  roles:
+  - base
+  - php
+  - apache
+  - wordpress
+
+- hosts: db
+  become: true
+  roles:
+  - base
+  - mysql

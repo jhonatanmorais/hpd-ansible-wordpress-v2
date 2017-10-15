@@ -1,0 +1,10 @@
+---
+- name: Instalado PHP e demais pacotes necessarios
+  apt: pkg={{ item }} state=installed
+  with_items:
+  - php
+  - php-mysql
+  - php-mcrypt
+  - python-mysqldb
+  - php-gd 
+  - php-ssh2

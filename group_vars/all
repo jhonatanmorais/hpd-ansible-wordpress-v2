@@ -1,0 +1,9 @@
+---
+wp_mysql_db: wordpress
+wp_mysql_user: wordpress
+wp_mysql_password: hpdc0de
+wp_mysql_host: 172.31.18.53
+
+mysql_port: "3306"
+mysql_bind_address: '0.0.0.0'
+mysql_datadir: /var/lib/mysql
