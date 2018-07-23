@@ -1,0 +1,7 @@
+--- 
+pg_host: 127.0.0.1
+pg_dbuser: myuser 
+pg_dbpasswd: mypasswd 
+pg_dbname: dbname 
+pg_encoding: UTF-8
+pg_destfile: /dir/dbname-{{ansible_date_time.date}}.backup

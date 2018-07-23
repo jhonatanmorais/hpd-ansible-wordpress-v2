@@ -1,0 +1,11 @@
+---
+- name: Backuping PostgreSQL Database
+  postgresql_db: 
+    name: "{{ pg_dbname }}"
+    login_host: "{{ pg_host }}" 
+    login_user: "{{ pg_dbuser }}"
+    login_password: "{{ pg_dbpasswd }}"
+    encoding: "{{ pg_encoding }}"
+    state: dump
+    target: "{{ pg_destfile }}"
+    target_opts: "--format=c -v"
